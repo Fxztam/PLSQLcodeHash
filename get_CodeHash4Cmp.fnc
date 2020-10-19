@@ -1,4 +1,3 @@
-```sql
 CREATE OR REPLACE FUNCTION get_CodeHash4Cmp (p_cname VARCHAR2, p_result VARCHAR2 DEFAULT NULL) RETURN VARCHAR2 AS
   /*
      Friedhold Matz : Created  - 2020-10-18
@@ -108,4 +107,3 @@ BEGIN
   END IF; 
   
 END get_CodeHash4Cmp;
-```
