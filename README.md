@@ -28,7 +28,7 @@ select get_CodeHash4Cmp('<stored-code-name>', '<PLSQL-code-hash-to-compare>') fr
 
 - #### Step 1: Save the example procedure _prc_example_ into the database:
 
-```sql
+```plsql
 create or replace procedure prc_example(p_x VARCHAR2) is
   /*
     This is a PL/SQL code demo for code hashing.
