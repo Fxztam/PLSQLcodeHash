@@ -14,13 +14,13 @@ The program was deliberately programmed simply and transparently with GOTO’s i
 
 After saving the *get_CodeHash4Cmp* function, the following application steps are possible:
 
-```
+```sql
 select get_CodeHash4Cmp('<stored-code-name>') from dual;
 ```
 
 Then you will get the SHA512 code hash so you can save it for later comparison:
 
-```
+```sql
 select get_CodeHash4Cmp('<stored-code-name>', '<PLSQL-code-hash-to-compare>') from dual;
 ```
 
@@ -54,7 +54,7 @@ CF83E1357EEFB8BDF1542850D66D8007D620E4050B5715DC83F4A921D36CE9CE47D0D13C5D85F2B0
 
 - #### Step 3: Save the changed example procedure _prc_example_changed_ into the database:
 
-```
+```sql
 create or replace PROCEDURE Prc_Example(p_x VARCHAR2) IS
 
   /*
@@ -77,10 +77,10 @@ END Prc_Example;
 
 - #### Step 4:  Compare the actual PL/SQL code hash with the stored from the _prc_example_ above:
 
-```
+```sql
 select get_codehash4cmp('PRC_EXAMPLE_CHANGED', 'CF83E1357EEFB8BDF1542850D66D8007D620E4050B5715DC83F4A921D36CE9CE47D0D13C5D85F2B0FF8318D2877EEC2F63B931BD47417A81A538327AF927DA3E') from dual;
 
-=> PRC_EXAMPLE : OK
+=> PRC_EXAMPLE : OK'
 ```
 #### Result: No PL/SQL code changes were detected.
 
