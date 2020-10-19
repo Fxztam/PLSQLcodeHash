@@ -45,7 +45,7 @@ end prc_example;
 
 - #### Step 2: Get the PL/SQL code hash from this *prc_example* and store it:
 
-```
+```sql
 select get_codehash4cmp('PRC_EXAMPLE') from dual;
 
 CF83E1357EEFB8BDF1542850D66D8007D620E4050B5715DC83F4A921D36CE9CE47D0D13C5D85F2B0FF8318D2877EEC2F63B931BD47417A81A538327AF927DA3E
