@@ -1,0 +1,18 @@
+create or replace PROCEDURE Prc_Example(p_x VARCHAR2) IS
+
+  /*
+    This is a PL/SQL code demo for code hashing.
+    F.Matz : 2020-10-19
+    -- comment changed ! 
+  */
+  
+  l_y NUMBER;
+  
+BEGIN
+  
+  -- get PI --
+  -- new comment ... --
+  l_y := Acos(-1);
+  dbms_output.put_line(l_y);
+  
+END Prc_Example;
