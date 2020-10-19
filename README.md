@@ -26,7 +26,7 @@ select get_CodeHash4Cmp('<stored-code-name>', '<PLSQL-code-hash-to-compare>') fr
 
 ### Example:
 
-- Step 1: Save the example procedure _prc_example_ into the database:
+- #### Step 1: Save the example procedure _prc_example_ into the database:
 
 ```sql
 create or replace procedure prc_example(p_x VARCHAR2) is
@@ -52,7 +52,7 @@ CF83E1357EEFB8BDF1542850D66D8007D620E4050B5715DC83F4A921D36CE9CE47D0D13C5D85F2B0
 
 ```
 
-- Step 3: Save the changed example procedure _prc_example_changed into the database:
+- #### Step 3: Save the changed example procedure _prc_example_changed_ into the database:
 
 ```
 create or replace PROCEDURE Prc_Example(p_x VARCHAR2) IS
@@ -75,13 +75,13 @@ BEGIN
 END Prc_Example;
 ```
 
-- Step 4:  Compare the actual PL/SQL code hash with the stored from the _prc_example_ above:
+- #### Step 4:  Compare the actual PL/SQL code hash with the stored from the _prc_example_ above:
 
 ```
 select get_codehash4cmp('PRC_EXAMPLE_CHANGED', 'CF83E1357EEFB8BDF1542850D66D8007D620E4050B5715DC83F4A921D36CE9CE47D0D13C5D85F2B0FF8318D2877EEC2F63B931BD47417A81A538327AF927DA3E') from dual;
 
 => PRC_EXAMPLE : OK
 ```
-### Result: ### No PL/SQL code changes were selected.
+#### Result: No PL/SQL code changes were detected.
 
 That's all.
