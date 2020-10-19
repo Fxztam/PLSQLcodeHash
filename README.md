@@ -1,6 +1,5 @@
 # PLSQLcodeHash
 ## Motivation
-## Motivation
 
 Changes to PL / SQL programs can be recognized using the source code timestamp in the repository.
 However, it is not clear whether effective PL / SQL code or only comments or white spaces were changed.
