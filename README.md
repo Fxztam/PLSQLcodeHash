@@ -48,11 +48,11 @@ end prc_example;
 ```sql
 select get_codehash4cmp('PRC_EXAMPLE') from dual;
 
-CF83E1357EEFB8BDF1542850D66D8007D620E4050B5715DC83F4A921D36CE9CE47D0D13C5D85F2B0FF8318D2877EEC2F63B931BD47417A81A538327AF927DA3E
+E030996282B21D2083F518741C49531ED528F3D6FA04E56726BA7ACCC27E2718BDAEA4946DB936E524B78F7FEC78673A
 
 ```
 
-- #### Step 3: Save the changed example procedure _prc_example_changed_ into the database:
+- #### Step 3: Copy & paste the example _prc_example_ changes into the database:
 
 ```sql
 create or replace PROCEDURE Prc_Example(p_x VARCHAR2) IS
