@@ -15,20 +15,21 @@ CREATE OR REPLACE FUNCTION get_CodeHash4Cmp (p_cname VARCHAR2, p_result VARCHAR2
   C_SLCOMM      CONSTANT VARCHAR2(1) := '-';
   C_MLCOMM1     CONSTANT VARCHAR2(1) := '/';
   C_MLCOMM2     CONSTANT VARCHAR2(1) := '*';
-  l_hash        RAW(64);
+  l_hash        RAW(64):= NULL;
 
 BEGIN
   -- get source from p_cname in l_clob 
   FOR rec IN (select text from all_source where name = p_cname) LOOP
       l_inp:= l_inp || rec.text;
   END LOOP;
-  
   l_len := dbms_lob.getlength(l_inp);
 
   IF l_len=0 THEN
      RETURN '$$$ "'||p_cname||'" : NOT FOUND $$$';
   END IF;
-  
+
+  l_offset := 1;
+   
   -- Read till the current offset is less the length of inp_clob
   <<normal_state>>
   WHILE(l_offset <= l_len) LOOP
@@ -71,9 +72,9 @@ BEGIN
   
   <<creturn_state>>
   WHILE(l_offset <= l_len) LOOP 
-      l_char1 := Substr(l_inp, l_offset, 1);     
-      l_offset:= l_offset+1;
-      IF l_char1<>C_CRETURN THEN GOTO normal_state; END IF;     
+      l_char1 := Substr(l_inp, l_offset, 1);           
+      IF l_char1<>C_CRETURN THEN GOTO normal_state; END IF; 
+      l_offset:= l_offset+1;    
   END LOOP;
   GOTO fine;
 
@@ -99,7 +100,8 @@ BEGIN
   -- EO `go over` states --
   
   <<fine>>
-  l_hash := sys.dbms_crypto.hash (l_res, dbms_crypto.HASH_SH512);
+
+  l_hash := Sys.Dbms_Crypto.Hash(Utl_Raw.CAST_TO_RAW(l_res), 5); -- SHA384 --
 
   IF p_result IS NOT NULL THEN
      IF l_hash = p_result THEN
