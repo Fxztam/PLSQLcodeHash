@@ -82,6 +82,6 @@ select get_codehash4cmp('PRC_EXAMPLE_CHANGED', 'CF83E1357EEFB8BDF1542850D66D8007
 
 => PRC_EXAMPLE : OK'
 ```
-#### Result: #### No PL/SQL code changes were detected.
+#### Result: No PL/SQL code changes were detected.
 
 That's all.
