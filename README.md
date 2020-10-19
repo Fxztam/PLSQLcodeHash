@@ -49,7 +49,7 @@ CF83E1357EEFB8BDF1542850D66D8007D620E4050B5715DC83F4A921D36CE9CE47D0D13C5D85F2B0
 
 ```
 
-- Step 2: Change some comments, white spaces and lower code wokens to upper:
+- Step 2: Change some comments, white spaces and lower code tokens to upper:
 
 ```
 create or replace PROCEDURE Prc_Example(p_x VARCHAR2) IS
