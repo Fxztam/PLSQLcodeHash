@@ -7,6 +7,7 @@ Changes to PL / SQL programs can be recognized using the source code timestamp i
 However, it is not clear whether effective PL / SQL code or only comments, white spaces or lower/upper case tokens were changed.
 
 The function _get_CodeHash4Cmp_ determines the hash code of the effective PL / SQL code without white spaces ,comments or changed lower/upper case tokens, so that proof of real code changes is possible by means of hash code comparison.
+
 The program was deliberately programmed simply and transparently with GOTO’s in order to enable possible extensions without side effects.
 
 ## Quick Start
