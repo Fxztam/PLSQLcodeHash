@@ -18,7 +18,7 @@ After saving the *get_CodeHash4Cmp* function, the following application steps ar
 select get_CodeHash4Cmp('<stored-code-name>') from dual;
 ```
 
-You will get the SHA512 code hash so you can save it for later comparison:
+You will get the SHA384 code hash so you can save it for later comparison:
 
 ```sql
 select get_CodeHash4Cmp('<stored-code-name>', '<PLSQL-code-hash-to-compare>') from dual;
